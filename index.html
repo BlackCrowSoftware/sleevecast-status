@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sleevecast status</title>
+<meta name="description" content="Is Sleevecast up? The console, API, Dock connections, sign-in, installers and website, checked every 5 minutes.">
+<style>
+:root { --bg:#0b0e12; --bg2:#11161d; --line:#232c38; --text:#e6edf3; --muted:#9aa7b4; --up:#2ee6c9; --down:#ff6b6b; --part:#f2b84b; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.wrap { max-width:860px; margin:0 auto; padding:40px 16px 60px; }
+a { color:var(--up); }
+.brand { letter-spacing:.18em; font-weight:700; font-size:14px; color:var(--text); text-decoration:none; }
+.banner { margin:24px 0; padding:18px 20px; border-radius:12px; font-size:20px; font-weight:600; border:1px solid var(--line); background:var(--bg2); }
+.banner.up { border-color:var(--up); } .banner.down { border-color:var(--down); color:var(--down); }
+.check { border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:12px; background:var(--bg2); }
+.row { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.name { font-weight:600; } .muted { color:var(--muted); font-size:13px; }
+.state.up { color:var(--up); } .state.down { color:var(--down); }
+.bars { display:flex; gap:2px; margin-top:10px; height:30px; }
+.bars span { flex:1; border-radius:2px; background:var(--line); }
+.bars span.u { background:var(--up); } .bars span.p { background:var(--part); } .bars span.d { background:var(--down); }
+.legend { display:flex; justify-content:space-between; margin-top:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="https://sleevecast.com/">SLEEVECAST</a> <span class="muted">· status</span>
+  <div id="banner" class="banner">Loading…</div>
+  <div id="checks"></div>
+  <p class="muted">Checked every 5 minutes from GitHub's servers, outside Sleevecast's own hosting. Bars show the last 90 days; a day is amber when any check of it failed.</p>
+</div>
+<script>
+fetch("data.json", { cache: "no-store" }).then(r => r.json()).then(d => {
+  const checks = Object.values(d.checks);
+  const down = checks.filter(c => c.status !== "up");
+  const b = document.getElementById("banner");
+  b.className = "banner " + (down.length ? "down" : "up");
+  b.textContent = down.length ? `${down.map(c => c.name).join(", ")} ${down.length > 1 ? "are" : "is"} down` : "All systems operational";
+  const days = [...Array(90)].map((_, i) => new Date(Date.now() - (89 - i) * 864e5).toISOString().slice(0, 10));
+  const box = document.getElementById("checks");
+  for (const c of checks) {
+    const perDay = {};
+    for (const h of c.history) { const k = h.hour.slice(0, 10); perDay[k] = perDay[k] || { up: 0, total: 0 }; perDay[k].up += h.up; perDay[k].total += h.total; }
+    const tot = Object.values(perDay).reduce((a, x) => [a[0] + x.up, a[1] + x.total], [0, 0]);
+    const pct = tot[1] ? (100 * tot[0] / tot[1]).toFixed(2) : "—";
+    const el = document.createElement("div"); el.className = "check";
+    const bars = days.map(k => { const x = perDay[k]; const cls = !x ? "" : x.up === x.total ? "u" : x.up === 0 ? "d" : "p";
+      return `<span class="${cls}" title="${k}${x ? `: ${x.up}/${x.total} checks up` : ": no data"}"></span>`; }).join("");
+    el.innerHTML = `<div class="row"><span class="name"></span><span class="state ${c.status}">${c.status === "up" ? "Operational" : "Down"}</span></div>
+      <div class="muted"></div><div class="bars">${bars}</div><div class="legend muted"><span>90 days ago</span><span>${pct}% up</span><span>today</span></div>`;
+    el.querySelector(".name").textContent = c.name;
+    el.querySelector(".muted").textContent = `${c.status === "up" ? "Up" : "Down"} since ${new Date(c.since).toLocaleString()} · ${c.detail} · ${c.ms} ms`;
+    box.appendChild(el);
+  }
+}).catch(() => { document.getElementById("banner").textContent = "Status data is not available right now."; });
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+name: check
+on:
+  schedule: [{ cron: "*/5 * * * *" }]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: check, cancel-in-progress: false }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check endpoints
+        id: run
+        run: echo "result=$(python3 check.py)" >> "$GITHUB_OUTPUT"
+      - name: Commit when something changed or a new hour began
+        if: steps.run.outputs.result == 'COMMIT'
+        run: |
+          git config user.name "sleevecast-status"
+          git config user.email "status@sleevecast.com"
+          git add data.json
+          git commit -m "status $(date -u +%Y-%m-%dT%H:%MZ)" && git push

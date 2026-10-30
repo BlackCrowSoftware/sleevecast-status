@@ -21,4 +21,4 @@ jobs:
           git config user.name "sleevecast-status"
           git config user.email "status@sleevecast.com"
           git add data.json
-          git commit -m "status $(date -u +%Y-%m-%dT%H:%MZ)" && git push
+          git commit -m "status $(date -u +%Y-%m-%dT%H:%MZ)" && { git push || { git pull --rebase && git push; }; }

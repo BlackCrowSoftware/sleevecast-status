@@ -1,0 +1,90 @@
+{
+ "checks": {
+  "app": {
+   "history": [
+    {
+     "hour": "2026-10-30T05:00Z",
+     "up": 1,
+     "total": 1
+    }
+   ],
+   "name": "Console",
+   "status": "up",
+   "since": "2026-10-30T05:47:33+00:00",
+   "detail": "HTTP 302",
+   "ms": 182
+  },
+  "api": {
+   "history": [
+    {
+     "hour": "2026-10-30T05:00Z",
+     "up": 1,
+     "total": 1
+    }
+   ],
+   "name": "API",
+   "status": "up",
+   "since": "2026-10-30T05:47:33+00:00",
+   "detail": "HTTP 200",
+   "ms": 125
+  },
+  "connect": {
+   "history": [
+    {
+     "hour": "2026-10-30T05:00Z",
+     "up": 1,
+     "total": 1
+    }
+   ],
+   "name": "Dock connections",
+   "status": "up",
+   "since": "2026-10-30T05:47:33+00:00",
+   "detail": "HTTP 101",
+   "ms": 159
+  },
+  "auth": {
+   "history": [
+    {
+     "hour": "2026-10-30T05:00Z",
+     "up": 1,
+     "total": 1
+    }
+   ],
+   "name": "Sign-in",
+   "status": "up",
+   "since": "2026-10-30T05:47:33+00:00",
+   "detail": "HTTP 200",
+   "ms": 452
+  },
+  "get": {
+   "history": [
+    {
+     "hour": "2026-10-30T05:00Z",
+     "up": 1,
+     "total": 1
+    }
+   ],
+   "name": "Dock installers",
+   "status": "up",
+   "since": "2026-10-30T05:47:33+00:00",
+   "detail": "HTTP 200",
+   "ms": 170
+  },
+  "site": {
+   "history": [
+    {
+     "hour": "2026-10-30T05:00Z",
+     "up": 1,
+     "total": 1
+    }
+   ],
+   "name": "Website and docs",
+   "status": "up",
+   "since": "2026-10-30T05:47:33+00:00",
+   "detail": "HTTP 200",
+   "ms": 126
+  }
+ },
+ "hour": "2026-10-30T05:00Z",
+ "checked": "2026-10-30T05:47:33+00:00"
+}

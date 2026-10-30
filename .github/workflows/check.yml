@@ -1,3 +1,4 @@
+# Probes the six Sleevecast endpoints every 5 minutes (GitHub may delay or skip scheduled runs under load).
 name: check
 on:
   schedule: [{ cron: "*/5 * * * *" }]

@@ -226,13 +226,18 @@
      "hour": "2026-11-09T06:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-09T16:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Console",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 302",
-   "ms": 1025
+   "ms": 2902
   },
   "api": {
    "history": [
@@ -460,13 +465,18 @@
      "hour": "2026-11-09T06:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-09T16:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "API",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 410
+   "ms": 426
   },
   "connect": {
    "history": [
@@ -694,13 +704,18 @@
      "hour": "2026-11-09T06:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-09T16:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Dock connections",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 101",
-   "ms": 442
+   "ms": 417
   },
   "auth": {
    "history": [
@@ -928,13 +943,18 @@
      "hour": "2026-11-09T06:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-09T16:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Sign-in",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 455
+   "ms": 327
   },
   "get": {
    "history": [
@@ -1162,13 +1182,18 @@
      "hour": "2026-11-09T06:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-09T16:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Dock installers",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 556
+   "ms": 332
   },
   "site": {
    "history": [
@@ -1396,15 +1421,20 @@
      "hour": "2026-11-09T06:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-09T16:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Website and docs",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 498
+   "ms": 433
   }
  },
- "hour": "2026-11-09T06:00Z",
- "checked": "2026-11-09T06:09:26+00:00"
+ "hour": "2026-11-09T16:00Z",
+ "checked": "2026-11-09T16:20:07+00:00"
 }

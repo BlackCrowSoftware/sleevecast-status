@@ -291,13 +291,18 @@
      "hour": "2026-11-13T00:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-13T07:00Z",
+     "up": 0,
+     "total": 1
     }
    ],
    "name": "Console",
-   "status": "up",
-   "since": "2026-10-30T05:47:33+00:00",
-   "detail": "HTTP 302",
-   "ms": 878
+   "status": "down",
+   "since": "2026-11-13T07:08:43+00:00",
+   "detail": "HTTP 500",
+   "ms": 213
   },
   "api": {
    "history": [
@@ -590,13 +595,18 @@
      "hour": "2026-11-13T00:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-13T07:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "API",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 206
+   "ms": 445
   },
   "connect": {
    "history": [
@@ -889,13 +899,18 @@
      "hour": "2026-11-13T00:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-13T07:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Dock connections",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 101",
-   "ms": 144
+   "ms": 448
   },
   "auth": {
    "history": [
@@ -1188,13 +1203,18 @@
      "hour": "2026-11-13T00:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-13T07:00Z",
+     "up": 0,
+     "total": 1
     }
    ],
    "name": "Sign-in",
-   "status": "up",
-   "since": "2026-10-30T05:47:33+00:00",
-   "detail": "HTTP 200",
-   "ms": 161
+   "status": "down",
+   "since": "2026-11-13T07:08:43+00:00",
+   "detail": "HTTP 502",
+   "ms": 142
   },
   "get": {
    "history": [
@@ -1487,13 +1507,18 @@
      "hour": "2026-11-13T00:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-13T07:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Dock installers",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 204
+   "ms": 362
   },
   "site": {
    "history": [
@@ -1786,15 +1811,20 @@
      "hour": "2026-11-13T00:00Z",
      "up": 1,
      "total": 1
+    },
+    {
+     "hour": "2026-11-13T07:00Z",
+     "up": 1,
+     "total": 1
     }
    ],
    "name": "Website and docs",
    "status": "up",
    "since": "2026-10-30T05:47:33+00:00",
    "detail": "HTTP 200",
-   "ms": 186
+   "ms": 297
   }
  },
- "hour": "2026-11-13T00:00Z",
- "checked": "2026-11-13T00:28:34+00:00"
+ "hour": "2026-11-13T07:00Z",
+ "checked": "2026-11-13T07:08:43+00:00"
 }
